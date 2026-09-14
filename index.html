@@ -5,116 +5,63 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Eschatometric Research</title>
 <style>
-:root{--bg:#000;--ink:#e6e6e6;--dim:#6a6a6a;--olive:#b7b76a}
+:root{--bg:#000;--ink:#d9d9d9;--dim:#4a4a4a;--olive:#b7b76a}
 *{box-sizing:border-box}
-html,body{margin:0;background:var(--bg);color:var(--ink);font:12px/1.6 "IBM Plex Mono","Courier New",monospace}
-a{color:inherit;text-decoration:none}
-header{display:flex;justify-content:space-between;align-items:baseline;padding:14px 20px;border-bottom:1px solid #222}
-header h1{margin:0;font-size:12px;font-weight:normal;letter-spacing:.12em;text-transform:lowercase}
-header nav{display:flex;gap:22px;color:var(--dim)}
-header nav a:hover{color:var(--ink)}
-.band{height:4px;background:var(--olive);width:64px;margin:0 20px}
-main{max-width:640px;margin:0 auto;padding:60px 20px 40vh}
-figure{margin:0 0 56px;text-align:center}
-figure img{width:min(100%,448px);height:auto;image-rendering:pixelated;image-rendering:crisp-edges;display:block;margin:0 auto}
-figcaption{color:var(--dim);font-size:11px;margin-top:14px;letter-spacing:.08em}
-.depth{margin:0 0 72px;opacity:0;transform:translateY(8px);transition:opacity .01s steps(1),transform .01s steps(1)}
-.depth.on{opacity:1;transform:none}
-.depth .n{color:var(--dim);font-size:11px;letter-spacing:.14em;margin-bottom:8px}
-.depth p{margin:0 0 6px}
-.depth ol{margin:6px 0 0;padding-left:22px;color:var(--ink)}
-.depth li{margin-bottom:2px}
-.depth li::marker{color:var(--dim)}
-.rule{width:64px;height:1px;background:#333;margin:0 0 72px}
-.foot{color:var(--dim);font-size:11px;letter-spacing:.08em}
-#cursor{display:inline-block;width:7px;height:12px;background:var(--ink);vertical-align:-2px;animation:blink 1s steps(1) infinite}
-@keyframes blink{50%{opacity:0}}
-@media (max-width:600px){header{flex-direction:column;gap:8px}header nav{gap:14px;flex-wrap:wrap}}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:12px/1.6 "IBM Plex Mono","Courier New",monospace;overflow-x:hidden}
+body{min-height:340vh;position:relative}
+h1{position:absolute;top:18px;left:22px;margin:0;font-size:11px;font-weight:normal;letter-spacing:.14em;color:var(--dim)}
+h1 i{display:block;width:40px;height:3px;background:var(--olive);margin-top:6px}
+figure{position:absolute;top:22vh;left:8vw;margin:0;width:min(34vw,320px)}
+figure img{width:100%;height:auto;image-rendering:pixelated;display:block}
+figcaption{color:var(--dim);font-size:10px;margin-top:10px;letter-spacing:.2em}
+.s{position:absolute;color:var(--ink);font-size:22px;line-height:1;opacity:0;transition:opacity .01s steps(1)}
+.s.on{opacity:1}
+.s.d{color:var(--dim)}
+.s.b{font-size:44px}
+.s.t{font-size:10px;letter-spacing:.3em;color:var(--dim)}
+.k{position:absolute;color:var(--dim);font-size:10px;letter-spacing:.3em}
+#end{position:absolute;bottom:14vh;right:12vw;color:var(--dim);font-size:10px;letter-spacing:.3em}
+#end b{display:inline-block;width:6px;height:11px;background:var(--ink);vertical-align:-2px;animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+@media (max-width:600px){figure{width:60vw;left:6vw}.s.b{font-size:32px}}
 </style>
 </head>
 <body>
-<header>
-<h1>eschatometric research</h1>
-<nav><a href="#d1">archive</a><a href="#d4">id(entity)</a><a href="#d7">occlusions</a><a href="mailto:">e-mail</a></nav>
-</header>
-<div class="band"></div>
-<main>
-<figure>
-<img src="samurai.png" width="448" height="600" alt="">
-<figcaption>fig. 0 &mdash; the edge</figcaption>
-</figure>
+<h1>eschatometric research<i></i></h1>
+<figure><img src="samurai.png" width="448" height="600" alt=""><figcaption>0</figcaption></figure>
 
-<section class="depth" id="d1">
-<div class="n">DEPTH 1</div>
-<p>Eschatometry is the measurement of what remains.</p>
-<p>Not of time. Of the remainder.</p>
-</section>
+<span class="s"   style="top:26vh;left:62vw">&#x2609;</span>
+<span class="s d" style="top:41vh;left:71vw">&#x263F;</span>
+<span class="s t" style="top:47vh;left:55vw">8:1:7:2</span>
+<span class="s b" style="top:58vh;left:79vw">&#x2646;</span>
+<span class="s"   style="top:74vh;left:50vw">&#x1F702;</span>
+<span class="s d" style="top:83vh;left:20vw">&#x1F70D;</span>
+<span class="s t" style="top:96vh;left:66vw">7:2:5:4</span>
 
-<section class="depth" id="d2">
-<div class="n">DEPTH 2</div>
-<p>Terminal system defined</p>
-<ol>
-<li>[Astronomical]. Isotropic exhaustion of gradient.</li>
-<li>[Anatomical]. Cell-count decrement as calendar.</li>
-<li>[Poetics]. Coda. Final stress.</li>
-<li>[Mathematical]. Limit-point reached by finite contact.</li>
-</ol>
-</section>
+<span class="s b" style="top:112vh;left:14vw">&#x1F718;</span>
+<span class="s"   style="top:121vh;left:44vw">&#x1F76C;</span>
+<span class="s d" style="top:133vh;left:83vw">&#x2620;</span>
+<span class="s"   style="top:148vh;left:30vw">&#x2299;</span>
+<span class="s t" style="top:156vh;left:58vw">&Omega;</span>
+<span class="s d" style="top:169vh;left:72vw">&#x1F771;</span>
 
-<section class="depth" id="d3">
-<div class="n">DEPTH 3</div>
-<p>The samurai does not descend.</p>
-<p>He counts the drop.</p>
-</section>
+<span class="s"   style="top:186vh;left:9vw">&#x2646;</span>
+<span class="s b d" style="top:198vh;left:52vw">&#x1F751;</span>
+<span class="s"   style="top:214vh;left:38vw">&#x2694;</span>
+<span class="s t" style="top:222vh;left:80vw">5:4:8:1</span>
+<span class="s d" style="top:238vh;left:24vw">&#x1F70B;</span>
+<span class="s"   style="top:251vh;left:64vw">&#x1F762;</span>
 
-<div class="rule"></div>
+<span class="s d" style="top:270vh;left:46vw">&#x2609;</span>
+<span class="s b" style="top:284vh;left:16vw">&#x1F76E;</span>
+<span class="s"   style="top:301vh;left:70vw">&#x22A5;</span>
+<span class="s d" style="top:318vh;left:34vw">&#x1F702;</span>
 
-<section class="depth" id="d4">
-<div class="n">DEPTH 4</div>
-<p>id(entity)</p>
-<ol>
-<li>Hidden, repressed, or denigrated nonhuman communicative agency.</li>
-<li>Component of a distributed countdown.</li>
-<li>Motive force, with final purpose.</li>
-</ol>
-</section>
-
-<section class="depth" id="d5">
-<div class="n">DEPTH 5</div>
-<p>Nomo: the &Omega;</p>
-<ol>
-<li>surge &nbsp;8:1:7:2</li>
-<li>hold &nbsp;&nbsp;7:2:5:4</li>
-<li>sink &nbsp;&nbsp;5:4:8:1</li>
-</ol>
-</section>
-
-<section class="depth" id="d6">
-<div class="n">DEPTH 6</div>
-<p>Everything beneath this line has already happened.</p>
-</section>
-
-<div class="rule"></div>
-
-<section class="depth" id="d7">
-<div class="n">DEPTH 7</div>
-<p>occlusions</p>
-<ol>
-<li>Ophidian consummation.</li>
-<li>Punctuated retrochronic voyage to the last of the days.</li>
-<li>Wormhole-space.</li>
-</ol>
-</section>
-
-<section class="depth" id="d8">
-<div class="n">DEPTH 8</div>
-<p class="foot">no further entries <span id="cursor"></span></p>
-</section>
-</main>
+<div id="end">&mdash; <b></b></div>
 <script>
-var secs=[].slice.call(document.querySelectorAll('.depth'));
-function reveal(){var h=window.innerHeight;secs=secs.filter(function(s){if(s.getBoundingClientRect().top<h*.88){s.classList.add('on');return false}return true})}
-window.addEventListener('scroll',reveal,{passive:true});window.addEventListener('resize',reveal);reveal();
+var el=[].slice.call(document.querySelectorAll('.s'));
+function r(){var h=innerHeight;el=el.filter(function(s){if(s.getBoundingClientRect().top<h*.9){s.classList.add('on');return false}return true})}
+addEventListener('scroll',r,{passive:true});addEventListener('resize',r);r();
 </script>
 </body>
 </html>
