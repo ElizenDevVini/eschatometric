@@ -10,11 +10,11 @@
 html,body{margin:0;background:var(--bg);color:var(--ink);font:12px/1.6 "IBM Plex Mono","Courier New",monospace;overflow-x:hidden}
 body{min-height:340vh;position:relative}
 h1{position:absolute;top:18px;left:22px;margin:0;font-size:11px;font-weight:normal;letter-spacing:.14em;color:var(--dim)}
-h1 i{display:block;width:40px;height:3px;background:var(--olive);margin-top:6px}
 figure{position:absolute;top:22vh;left:8vw;margin:0;width:min(34vw,320px)}
 figure img{width:100%;height:auto;image-rendering:pixelated;display:block}
 figcaption{color:var(--dim);font-size:10px;margin-top:10px;letter-spacing:.2em}
 .s{position:absolute;color:var(--ink);font-size:22px;line-height:1;opacity:0;transition:opacity .01s steps(1)}
+.s canvas{display:block;image-rendering:pixelated}
 .s.on{opacity:1}
 .s.d{color:var(--dim)}
 .s.b{font-size:44px}
@@ -27,7 +27,7 @@ figcaption{color:var(--dim);font-size:10px;margin-top:10px;letter-spacing:.2em}
 </style>
 </head>
 <body>
-<h1>eschatometric research<i></i></h1>
+<h1>eschatometric research</h1>
 <figure><img src="samurai.png" width="448" height="600" alt=""><figcaption>0</figcaption></figure>
 
 <span class="s"   style="top:26vh;left:62vw">&#x2609;</span>
@@ -59,7 +59,27 @@ figcaption{color:var(--dim);font-size:10px;margin-top:10px;letter-spacing:.2em}
 
 <div id="end">&mdash; <b></b></div>
 <script>
-var el=[].slice.call(document.querySelectorAll('.s'));
+var seed=11;function rnd(){seed=(seed*16807)%2147483647;return seed/2147483647}
+function rot(el){
+  if(el.classList.contains('t'))return;
+  var ch=el.textContent,big=el.classList.contains('b'),n=big?56:30,sc=2;
+  var c=document.createElement('canvas');c.width=n;c.height=n;var x=c.getContext('2d');
+  x.fillStyle='#000';x.fillRect(0,0,n,n);
+  x.fillStyle='#fff';x.font=(n*0.9)+'px serif';x.textAlign='center';x.textBaseline='middle';
+  x.translate(n/2,n/2);x.rotate((rnd()-.5)*.5);x.transform(1,(rnd()-.5)*.4,(rnd()-.5)*.3,1,0,0);x.fillText(ch,0,1);
+  var d=x.getImageData(0,0,n,n),p=d.data;
+  for(var i=0;i<p.length;i+=4){
+    var on=p[i]>110;
+    if(on&&rnd()<.12)on=false;
+    if(!on&&rnd()<.006)on=true;
+    var v=on?(el.classList.contains('d')?0x4a:0xd9):0;
+    p[i]=p[i+1]=p[i+2]=v;p[i+3]=on?255:0;
+  }
+  x.setTransform(1,0,0,1,0,0);x.clearRect(0,0,n,n);x.putImageData(d,0,0);
+  c.style.width=(n*sc)+'px';c.style.height=(n*sc)+'px';
+  el.textContent='';el.appendChild(c);
+}
+var el=[].slice.call(document.querySelectorAll('.s'));el.forEach(rot);
 function r(){var h=innerHeight;el=el.filter(function(s){if(s.getBoundingClientRect().top<h*.9){s.classList.add('on');return false}return true})}
 addEventListener('scroll',r,{passive:true});addEventListener('resize',r);r();
 </script>
